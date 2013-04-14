@@ -368,6 +368,7 @@ a.playlist:after {
 .donation .donation-charity {
   color: #fc609d;
   font-size: 1.154em;
+  text-decoration: underline;
 }
 
 

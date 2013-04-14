@@ -13,7 +13,7 @@ define(['underscore', 'chaplin', 'lib/utils', 'lib/services/service_provider'], 
 
     __extends(Facebook, _super);
 
-    facebookAppId = '437795012974751';
+    facebookAppId = window._rails_env.facebookAppId;
 
     scope = 'user_likes';
 
