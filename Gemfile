@@ -4,8 +4,6 @@ gem 'rails'
 
 gem 'haml'
 
-#gem 'jquery-rails'
-
 # Needs to be outside of assets group because it’s needed in production
 # Use a patched version with an updated r.js file
 gem 'requirejs-rails', '0.9.0', :path => "vendor/gems/requirejs-rails-0.9.0"
@@ -22,18 +20,3 @@ end
 
 gem "mongo_mapper"
 gem "bson_ext"
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
