@@ -30,6 +30,8 @@ define [
       @subscribeEvent 'loginStatus', @showHideLoginNote
       @subscribeEvent 'addsong', @show
       @delegate 'click', "a.close", @close
+      @delegate 'focusin', "input[name='song']", @clear
+      @delegate 'focusout', "input[name='song']", @populate
       @delegate 'click', ".search-spotify input[type='submit']", @submitHandler
 
     # Show/hide a login appeal if not logged in
@@ -54,4 +56,10 @@ define [
       @collection.song = $('input[type="text"]').val()
       @collection.fetch()
 
+    clear: ->
+      $("input[name='song']").val('')
 
+    populate: ->
+      if $("input[name='song']").val().length == 0
+        $("input[name='song']").val('Type a song name or artist here')
+      
