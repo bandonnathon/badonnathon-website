@@ -68,6 +68,8 @@ module ChaplinExample
       config.hamlcoffee.uglify = true
     end
 
+    config.assets.initialize_on_precompile = false
+    
     config.after_initialize do
 
       # CoffeeScript compilation: Do not wrap the code in a closure
