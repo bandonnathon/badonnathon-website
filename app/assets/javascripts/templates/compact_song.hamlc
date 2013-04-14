@@ -1,0 +1,1 @@
+<b>{{ name }}</b> by <b>{{ artist }}</b> donated by <a href="http://facebook.com/{{ donorScreen }}">{{ donor }}</a>

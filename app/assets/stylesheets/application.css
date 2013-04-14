@@ -1,0 +1,621 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+audio:not([controls]) {
+  display: none;
+}
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+a:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+a:hover,
+a:active {
+  outline: 0;
+}
+img {
+  height: auto;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 75%;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #ffffff;
+}
+a {
+  color: #0088cc;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a {
+  color: inherit;
+}
+
+
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #4fd9a9 url(/images/bg-gradient.png) repeat-x 0 0;
+  background-size: 100% 100%;
+  position: relative;
+}
+
+
+/******/
+/* set perspective on outer container */
+#wrapper,
+#page-one,
+#page-two {
+  width: 100%;
+  height: 100%;
+}
+
+.flipContainer {
+  -moz-perspective: 1000;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  width: 100%;
+  height: 100%;
+}
+
+/* set transition properties on outer container */
+.flipInner {
+  -moz-transition: 0.6s;
+  -moz-transform-style: preserve-3d;
+  -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+/* set rotated state when .flipped class is applied to inner container */
+.flipContainer.flipped .flipInner {
+  -moz-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+/* hide back of pane during swap */
+#flipFront, #flipBack {
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* front pane, placed above back */
+#flipFront {
+  z-index: 5;
+}
+
+/* back, initially hidden pane */
+#flipBack {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+} 
+/******/
+
+
+.page {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+}
+
+#page-one,
+#page-two {
+  background: url(/images/bg-home.jpg) no-repeat 50% 0;
+  background-size: cover;
+  bottom: 10px;
+  left: 10px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 1;
+}
+
+#page-two {
+  background: url(/images/bg-playlist.jpg) no-repeat 50% 0;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 10em;
+  font-weight: 100;
+  line-height: 0.8em;
+  color: rgb(252,96,157);
+}
+
+.close:hover {
+  color: rgb(252,96,157);
+}
+
+.mainHeading {
+  color: #fc609d;
+  margin-bottom: 7px;
+  font-size: 1.2em;
+}
+
+a.playlist:after {
+  display: block;
+  float: right;
+  content: "";
+  width: 19px;
+  height: 18px;
+  background: transparent url(/images/cta.png) no-repeat;
+}
+
+.panel {
+  background: #fff;
+  background: rgba(255, 255, 255, .9);
+  box-shadow: 3px 3px 0 0 rgb(252, 96, 157);
+  font-family: "futura-pt";
+  font-weight: 500;
+  font-size: 1.1em;
+  margin: 0 auto 0;
+  max-width: 780px;
+  position: relative;
+  top: 102px;
+}
+
+.panel .inner,
+.panel .playlist .inner {
+  padding: 3em 2em 1.5em;
+}
+
+.panel h1 {
+  background: #4edaa9;
+  background: rgb(78,218,169);
+  color: #fff;
+  display: inline-block;
+  margin: 0;
+  padding: 0 .5em;
+  position: absolute;
+  top: -1em;
+  left: 0;
+  text-transform: uppercase;
+  -webkit-transform: matrix(1, -0.175, 0, 1, 0, 0);
+  transform: matrix(1, -0.175, 0, 1, 0, 0);
+}
+
+.panel h2 {
+  font-size: 1.846em;
+  font-weight: normal;
+}
+
+.panel p {
+  color: #333;
+  font-size: 1.4em;
+}
+
+.panel p a {
+  color: rgb(252,96,157);
+}
+
+.panel p a:focus,
+.panel p a:hover {
+  color: rgb(68,42,141);
+}
+
+.welcome {
+  margin: 0 auto 0;
+  position: relative;
+  width: 50%;
+  top: 280px;
+  font-family: "futura-pt";
+  font-weight: 500;
+  z-index: 3;
+}
+
+.welcome > img {
+  height: auto;
+  width: 100%;
+}
+
+.welcome a {
+  background: #4edaa9;
+  color: #fff;
+  display: inline-block;
+  font-size: 2.154em;
+  line-height: 1.5;
+  padding: 0 .5em;
+  text-transform: uppercase;
+}
+
+.welcome .strap {
+  -webkit-transform: matrix(1, -0.175, 0, 1, 0, 0);
+  transform: matrix(1, -0.175, 0, 1, 0, 0);
+}
+
+.donation {
+  background: rgb(255,255,255);
+  box-shadow: 3px 3px 0 0 rgb(252, 96, 157);
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  width: 240px;
+  z-index: 3;
+}
+
+.donation .inner,
+.player .inner,
+.playlist .inner {
+  padding: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+.donation .border,
+.player .border {
+  background: #fc609d;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  z-index: 1;
+}
+
+.donation .money4trax {
+  border-bottom: 3px solid #fecfe1;
+  color: #fc609d;
+  display: block;
+  font-size: 1.846em;
+  margin: 0 0 .5em;
+  padding: 0 0 .5em;
+  text-transform: uppercase;
+}
+
+.donation a,
+.donation span {
+  line-height: 1.2;
+}
+
+.donation .donation-intro,
+.donation .donation-total {
+  color: #4edaa9;
+  display: block;
+}
+
+.donation .donation-intro {
+  font-size: 1.385em;
+  text-transform: uppercase;
+}
+
+.donation .donation-total {
+  font-size: 2.923em;
+}
+
+.donation .donation-meter {
+  background: url(/images/donation-meter-target.gif) repeat-x 0 0;
+  display: block;
+  height: 20px;
+  margin: 0 0 .5em;
+  width: 99%;
+}
+
+.donation-meter span {
+  height: 20px;
+  display: block;
+  background: url(/images/donation-meter-target-dark.gif);
+  width: 0;
+}
+
+.donation .donation-charity {
+  color: #fc609d;
+  font-size: 1.154em;
+}
+
+
+
+
+/*****/
+
+.songs {
+  margin: 0 auto 0;
+  position: relative;
+  width: 50%;
+  
+  font-family: "futura-pt";
+  font-weight: 500;
+}
+
+.playlistpose,
+.aboutpose {
+  background: url(/images/bg-playlist.jpg) no-repeat 50% 0;
+  background-size: cover;
+  bottom: 10px;
+  left: 10px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 1;
+}
+
+.cta-donate {
+  color: rgb(252,96,157);
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+.cta-donate:focus,
+.cta-donate:hover {
+  color: rgb(68,42,141);
+}
+/******/
+
+
+
+
+
+/******/
+
+.player {
+  font-family: "futura-pt";
+  font-weight: 500;
+  font-size: 1.1em;
+  background: #fef200;
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+  width: 328px;
+}
+
+.player .inner {
+  background: #fef200;
+  text-transform: uppercase;
+}
+
+.player .border {
+  background: #4edaa9;
+}
+
+.player .latestSong {
+  background: #fff;
+  padding: 0;
+}
+
+
+/******/
+
+.also {
+  background: yellow;
+  width: 155px;
+  height: 155px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  border-radius: 100px;
+  padding: 25px;
+  padding-top: 37px;
+  text-align: center;
+  color: #4edaa9;
+  text-transform: uppercase;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
+  box-shadow: 4px 4px 0 0 rgb(78, 218, 169);
+  transform:rotate(15deg);
+  -ms-transform:rotate(15deg); /* IE 9 */
+  -moz-transform:rotate(15deg); /* Firefox */
+  -webkit-transform:rotate(15deg); /* Safari and Chrome */
+  -o-transform:rotate(15deg); /* Opera */
+  z-index: 3;
+}
+
+.also a {
+  width: 22px;
+  height: 21px;
+  display: inline-block;
+}
+
+.also a span {
+  display: none;
+}
+
+.fb-icon {
+  background: url(/images/fb-icon.png);
+}
+
+.tw-icon {
+  background: url(/images/tw-icon.png);
+}
+
+.sp-icon {
+  background: url(/images/sp-icon.png);
+}
+/*******/
+
+
+.playlist li:after {
+  clear: both;
+  content: '';
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+p.playlistTitle {
+  color: #fff;
+  background-color: #4edaa9;
+  display: inline-block;
+  -webkit-transform: matrix(1, -0.175, 0, 1, 0, 0);
+  font-size: 1.6em;
+  margin: 20px 0 0 0;
+  padding: 10px;
+  z-index:100;
+}
+
+.playlist .border {
+  background: red;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+}
+
+.search {
+  display: none;
+}
+
+.playlist .search-spotify {
+  border-bottom: 1px solid rgb(78,218,169);
+  position: relative;
+}
+
+.playlist .search-spotify input[type="submit"] {
+  background: url(/images/icon-search.png) no-repeat 0 0;
+  border: 0;
+  float: right;
+  height: 35px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  text-indent: 100%;
+  white-space: nowrap;
+  width: 35px;
+}
+
+.playlist .search-spotify input[type="submit"]:focus,
+.playlist .search-spotify input[type="submit"]:hover {
+  background-position: 100% 0;
+}
+
+.playlist .search-spotify input[type="text"] {
+  background: transparent;
+  border: 0;
+  color: rgb(51,51,51);
+  float: left;
+  font-family: "futura-pt";
+  font-size: 2em;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  width: 690px;
+}
+
+.playlist ul {
+  color: rgb(252,96,157);
+  font-family: "futura-pt";
+  font-size: 1.5em;
+  margin: 0 0 2em;
+  padding: 0;
+}
+
+.playlist ul li {
+  border-bottom: 1px solid rgb(78,218,169);
+  list-style: none;
+  padding: .25em 0;
+}
+
+.playlist ul .track-name {
+  float: left;
+  text-transform: uppercase;  
+}
+
+.playlist ul .track-artist,
+.playlist ul .track-from {
+  float: right;
+  text-transform: inherit;
+}
+
+.playlist ul form {
+  clear: both;
+}
+
+.playlist-mix ul {
+  color: rgb(51,51,51);
+}
+
+/* about */
+.aboutpose {
+  background-image: url(/images/bg-about.jpg);
+}
+
+.trustImg {
+  float: right;
+}
+/* end about */
+
+#sidebar,
+#login {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 5;
+}
+
+#login {
+  left: 100px;
+}
+
+
+
+

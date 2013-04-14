@@ -1,0 +1,25 @@
+<div class="page">
+  <div class="panel">
+    <div class="playlist playlist-mix">
+      <div class="inner">
+
+        <h1>The marathon mix</h1>
+
+        <ol></ol>
+
+        <p class="loading">Loading…</p>
+
+        <p class="fallback">You have no likes yet.</p>
+
+        <ul id="playlist"></ul>
+
+
+
+
+
+        <a href="/addsong" class="cta-donate">Donate to add your song to the marathon mix</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="playlistpose"></div>

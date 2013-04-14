@@ -1,0 +1,7 @@
+<div class="inner">
+  <a href="/addsong" class="money4trax">Give your cash to add your fave track</a>
+  <span class="donation-intro">Big up you've raised</span>
+  <span class="donation-total">&pound;<span></span></span>
+  <span class="donation-meter"><span></span></span>
+  <a href="/about" class="donation-charity">for the Terrence Higgins Trust</a>
+</div>

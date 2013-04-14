@@ -1,0 +1,28 @@
+<div class="page">
+  <a href="#" class="close" title="Close song selector">X</a>
+  <div class="panel">
+    <div class="playlist">
+      <div class="inner">
+
+        <div class="showLogin"
+          <p class="login-note">Please login with Facebook to choose a song</p>
+        </div>
+
+        <div class="showSearch">
+          <h1>Pick your track</h1>
+            
+          <form action="/search" class="search-spotify clearfix">
+            <input type="text" name="song" value="Type a song's name or artist here" />
+            <input type="submit" />
+          </form>
+
+        <ul id="results"></ul>
+        </div>
+
+        <div id="showButton"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="playlistpose"></div>

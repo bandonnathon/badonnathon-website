@@ -1,0 +1,5 @@
+songs: 
+
+<% for song in @songs %>
+  <li><%= song.name %> by <%= song.artist %>.</li>
+<% end %>
