@@ -2,9 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails'
 
-gem 'sqlite3'
-#gem 'mysql2'
-
 gem 'haml'
 
 #gem 'jquery-rails'
