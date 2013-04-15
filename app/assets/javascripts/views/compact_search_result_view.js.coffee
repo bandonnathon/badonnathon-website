@@ -18,10 +18,14 @@ define [
       @delegate 'click', "span", @chooseHandler
 
     chooseHandler: ->
-      console.log 'clicked'
+      try
+        donor = mediator.user.get('first_name') + ' ' + mediator.user.get('last_name')
+      catch error
+        donor = "anon"
+        
       @model.set({
-        donor : mediator.user.get('first_name') + ' ' + mediator.user.get('last_name')
-        donorScreen : mediator.user.get('username')
+        donor : donor
+        donorScreen : donor
       })
       mediator.publish 'addToPlaylist', @model
 
