@@ -8,6 +8,10 @@ gem 'haml'
 # Use a patched version with an updated r.js file
 gem 'requirejs-rails', '0.9.0', :path => "vendor/gems/requirejs-rails-0.9.0"
 
+group :production do
+  gem 'thin'  
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

@@ -126,6 +126,10 @@ body {
   background: url(/images/bg-donation.jpg) no-repeat 50% 0;
 }
 
+.about-page {
+  background: url(/images/bg-about.jpg) no-repeat 50% 0;
+}
+
 .close {
   position: absolute;
   top: 20px;

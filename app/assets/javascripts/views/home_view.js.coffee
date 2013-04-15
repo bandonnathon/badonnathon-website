@@ -25,10 +25,9 @@ define [
         percent = parseInt resp['money_target'] * 0.01
         raised = parseInt resp['money_total']
         percentRaised = raised / percent
-        total = 100 - percentRaised
 
         $(".donation-total span").text raised
-        $(".donation-meter span").css 'width', total+'%'
+        $(".donation-meter span").css 'width', percentRaised+'%'
 
     # Show/hide a login appeal if not logged in
     showHideLoginNote: ->
