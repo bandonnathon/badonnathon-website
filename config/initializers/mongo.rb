@@ -1,4 +1,4 @@
-MongoMapper.database = "#myapp-#{Rails.env}"
+MongoMapper.database = "app13257343"
 
 if defined?(PhusionPassenger)
   PhusionPassenger.on_event(:starting_worker_process) do |forked|
