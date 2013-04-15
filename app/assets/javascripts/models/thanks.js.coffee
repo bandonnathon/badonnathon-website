@@ -3,7 +3,7 @@ define [
 ], (Model) ->
   'use strict'
 
-  class Home extends Model
+  class Thanks extends Model
 
     defaults:
-      message: 'home'
+      message: 'thanks'

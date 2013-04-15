@@ -10,9 +10,8 @@ define [
     title: 'Badonnathon'
 
     historyURL: (params) ->
-      ''
+      '/'
 
-    show: (params) ->
-      #console.debug 'HelloWorldController#show'
+    home: (params) ->
       @model = new Home()
       @view = new HomeView model: @model

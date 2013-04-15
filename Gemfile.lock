@@ -125,6 +125,7 @@ PLATFORMS
 DEPENDENCIES
   bson_ext
   coffee-rails
+  execjs
   haml
   haml_coffee_assets
   mongo_mapper

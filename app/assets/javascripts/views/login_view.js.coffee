@@ -1,9 +1,10 @@
 define [
   'underscore'
+  'handlebars'
   'chaplin'
-  'lib/utils'
   'views/base/view'
-], (_, Chaplin, utils, View) ->
+  'text!templates/login.hbs'
+], (_, Handlebars, Chaplin, View, template) ->
   'use strict'
 
   # Shortcut to the mediator
@@ -11,19 +12,15 @@ define [
 
   class LoginView extends View
 
-    templateName: 'login'
-
-    id: 'login'
-    # Automatically append to the DOM on render
-    container: '#showButton'
-    # Automatically render after initialize
+    container: '.loginHere'
+    
     autoRender: true
 
     # Expects the serviceProviders in the options
     initialize: (options) ->
       super
-      #console.debug 'LoginView#initialize', @el, options, options.serviceProviders
       @initButtons options.serviceProviders
+
 
     # In this project we currently only have one service provider and therefore
     # one button. But this should allow for different service providers.
@@ -51,7 +48,6 @@ define [
         serviceProvider.fail failed
 
     loginWith: (serviceProviderName, serviceProvider, e) ->
-      #console.debug 'LoginView#loginWith', serviceProviderName, serviceProvider
       e.preventDefault()
       return unless serviceProvider.isLoaded()
       mediator.publish 'login:pickService', serviceProviderName
@@ -71,3 +67,23 @@ define [
           'Error connecting. Please check whether you are blocking ' +
           "#{utils.upcase(serviceProviderName)}."
         )
+
+    # Save the template string in a prototype property.
+    # This is overwritten with the compiled template function.
+    # In the end you might want to used precompiled templates.
+    template: template
+    template = null
+
+    getTemplateFunction: ->
+      template = @template
+
+      if typeof template is 'string'
+        # Compile the template string to a function and save it
+        # on the prototype. This is a workaround since an instance
+        # shouldn’t change its prototype normally.
+        templateFunc = Handlebars.compile template
+        @constructor::template = templateFunc
+      else
+        templateFunc = template
+
+      templateFunc

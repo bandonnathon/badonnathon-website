@@ -10,12 +10,15 @@ define [
   
   class PlaylistController extends Chaplin.Controller
 
+    historyURL: (params) ->
+      '/playlist'
+
     initialize: ->
       @subscribeEvent 'addToPlaylist', @addToPlaylist
 
     index: ->
       @view = new PlaylistView collection: mediator.songs # a collection view
-      mediator.songs.fetch()
+      @view.showHideLoginNote()
 
     addToPlaylist: (model) ->
       mediator.songs.create(new Song( model ) )

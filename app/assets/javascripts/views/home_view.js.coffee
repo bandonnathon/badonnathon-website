@@ -1,62 +1,61 @@
 define [
+  'handlebars'
+  'chaplin'
   'views/base/view'
-], (View) ->
+  'text!templates/home.hbs'
+], (Handlebars, Chaplin, View, template) ->
   'use strict'
 
   class HomeView extends View
 
-    templateName: 'home'
+    className: 'home'
 
-    # Automatically append to the DOM on render
-    container: '#page-one'
+    container: '#wrapper'
 
-    # Automatically render after initialize
     autoRender: true
-
-    state: 'front'
 
     initialize: ->
       super
+      @subscribeEvent 'loginStatus', @showHideLoginNote
+      @fetchTotal()
 
-      @subscribeEvent 'flip', @flipHandler
-      @subscribeEvent 'addsong', @hide
-      @subscribeEvent 'removeaddsong', @show
-      
+    fetchTotal: ->
+      # get total donations from virgin
+      $.getJSON "http://api.jo.je/virginmoneygiving/jsonp.php?d=280684&callback=?", (resp) ->
+        percent = parseInt resp['money_target'] * 0.01
+        raised = parseInt resp['money_total']
+        percentRaised = raised / percent
+        total = 100 - percentRaised
 
-    hide: -> 
-      $('.flipContainer').hide();
+        $(".donation-total span").text raised
+        $(".donation-meter span").css 'width', total+'%'
 
-    show: -> 
-      $('.flipContainer').show();
+    # Show/hide a login appeal if not logged in
+    showHideLoginNote: ->
+      $('.loginHere').css 'display',
+        if !!Chaplin.mediator.user then 'none' else 'block'
 
-    flipHandler: ->
+      $('.nologinHere').css 'display',
+        if !!Chaplin.mediator.user then 'block' else 'none'
 
-      # apply flip classes to page-one and page-two
-      if @state == "front"
-        @state = 'back'
-        $('.flipContainer').addClass('flipped');
+
+    getTemplateFunction: ->
+
+      template = @template
+
+      if typeof template is 'string'
+        # Compile the template string to a function and save it
+        # on the prototype. This is a workaround since an instance
+        # shouldn’t change its prototype normally.
+        templateFunc = Handlebars.compile template
+        @constructor::template = templateFunc
       else
-        @state = 'front'
-        $('.flipContainer').removeClass('flipped');
+        templateFunc = template
 
-    ### 
+      templateFunc
 
-    $.when(App.homePage.fetch()).done(function() {
-      new HomePageView({
-        model: App.homePage
-      }).render();
-    });
-
-    $.when(App.playlist.fetch()).done(function() {
-        new PlaylistView({
-            collection: App.playlist
-        }).render();
-    });
-
-    if(state === "playlist") {
-        this.$el.find('.flipContainer').addClass('flipped');
-    } else {
-        this.$el.find('.flipContainer').removeClass('flipped');
-    }
-
-    ###
+    # Save the template string in a prototype property.
+    # This is overwritten with the compiled template function.
+    # In the end you might want to used precompiled templates.
+    template: template
+    template = null

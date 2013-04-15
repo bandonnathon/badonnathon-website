@@ -68,6 +68,8 @@ module ChaplinExample
       config.hamlcoffee.uglify = true
     end
 
+    config.requirejs.logical_asset_filter += [/\.hbs$/]
+
     config.assets.initialize_on_precompile = false
     
     config.after_initialize do

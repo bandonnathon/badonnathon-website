@@ -2,6 +2,8 @@ paths:
   jquery: 'jquery-1.8.2'
   underscore: 'underscore-1.4.2'
   backbone: 'backbone-0.9.2'
+  handlebars: 'handlebars-1.0.rc.1'
+  text: 'require-text-2.0.3'
   chaplin: 'chaplin-1.0.0-pre'
 shim:
   'underscore':
@@ -9,3 +11,6 @@ shim:
   'backbone':
     deps: ['underscore', 'jquery']
     exports: 'Backbone'
+  'handlebars': {
+      exports: 'Handlebars'
+    }

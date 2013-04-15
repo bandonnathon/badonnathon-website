@@ -3,19 +3,13 @@ define [
   'views/layout'
   'routes'
   'controllers/session_controller'
-  'controllers/sidebar_controller'
-  'controllers/also_controller'
-  'controllers/donation_controller'
-  'controllers/player_controller'
-  'controllers/welcome_controller'
   'controllers/playlist_controller'
   'controllers/search_controller'
   'controllers/about_controller'
+  'controllers/thanks_controller'
   'models/songs'
-  # Require base controllers manually because
-  # they aren’t compiled individually
   'controllers/home_controller'
-], (Chaplin, Layout, routes, SessionController, SidebarController, AlsoController, DonationController, PlayerController, WelcomeController, PlaylistController, SearchController, AboutController, SongsCollection) ->
+], (Chaplin, Layout, routes, SessionController, PlaylistController, SearchController, AboutController, ThanksController, SongsCollection, HomeController) ->
   'use strict'
 
   # The application object
@@ -28,7 +22,6 @@ define [
 
     initialize: ->
       super
-      #console.debug 'HelloWorldApplication#initialize'
 
       # Initialize core components
       @initDispatcher()
@@ -60,20 +53,11 @@ define [
     # ------------------------------
     initControllers: ->
       new SessionController()
-      new SidebarController()
-      new AlsoController()
-      new DonationController()
-      new PlayerController()
-      new WelcomeController()
+      new ThanksController()
+      new HomeController()
       new PlaylistController()
       new SearchController()
       new AboutController()
-      # These controllers are active during the whole application runtime.
-      # You don’t need to instantiate all controllers here, only special
-      # controllers which do not to respond to routes. They may govern models
-      # and views which are needed the whole time, for example header, footer
-      # or navigation views.
-      # e.g. new NavigationController()
 
     # Create additional mediator properties
     # -------------------------------------
@@ -83,6 +67,7 @@ define [
 
       # global collection
       Chaplin.mediator.songs = new SongsCollection()
+      Chaplin.mediator.songs.fetch()
       
       # Add additional application-specific properties and methods
       # Seal the mediator

@@ -13,8 +13,8 @@ gem 'requirejs-rails', '0.9.0', :path => "vendor/gems/requirejs-rails-0.9.0"
 group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
-  #gem 'compass-rails'
   gem 'haml_coffee_assets'
+  gem 'execjs'
   gem 'uglifier'
 end
 

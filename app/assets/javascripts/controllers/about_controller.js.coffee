@@ -1,11 +1,16 @@
 define [
   'chaplin'
+  'models/about'
   'views/about_view'
-], (Chaplin, AboutView) ->
+], (Chaplin, About, AboutView) ->
   'use strict'
 
   class AboutController extends Chaplin.Controller
 
-    initialize: ->
-      @view = new AboutView()
+    historyURL: (params) ->
+      '/'
+
+    index: ->
+      @model = new About()
+      @view = new AboutView model: @model
 

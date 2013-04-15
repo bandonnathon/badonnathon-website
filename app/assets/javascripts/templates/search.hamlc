@@ -1,12 +1,8 @@
 <div class="page">
-  <a href="#" class="close" title="Close song selector">X</a>
+  <a href="/" class="close" title="Close song selector">X</a>
   <div class="panel">
     <div class="playlist">
       <div class="inner">
-
-        <div class="showLogin"
-          <p class="login-note">Please login with Facebook to choose a song</p>
-        </div>
 
         <div class="showSearch">
           <h1>Pick your track</h1>
@@ -16,10 +12,15 @@
             <input type="submit" />
           </form>
 
-        <ul id="results"></ul>
+          <p class="loading">Loading…</p>
+          <p class="fallback">...</p>
+
+          <ul id="results"></ul>
         </div>
 
-        <div id="showButton"></div>
+        <button class="cta-give" style="display:none">
+          Give your cash to add your pumpin' track
+        </button>
 
       </div>
     </div>

@@ -22,37 +22,27 @@ define [
     renderItems: true
     itemView: CompactSearchResultView
 
+    # Fallback content selector
+    fallbackSelector: '.fallback'
+    
+    # Loading indicator selector
+    loadingSelector: '.loading'
+
     listSelector: '#results'
 
     initialize: ->
       super
 
-      @subscribeEvent 'loginStatus', @showHideLoginNote
       @subscribeEvent 'addsong', @show
-      @delegate 'click', "a.close", @close
       @delegate 'focusin', "input[name='song']", @clear
       @delegate 'focusout', "input[name='song']", @populate
       @delegate 'click', ".search-spotify input[type='submit']", @submitHandler
 
-    # Show/hide a login appeal if not logged in
-    showHideLoginNote: ->
-
-      @$('.showLogin').css 'display',
-        if Chaplin.mediator.user then 'none' else 'block'
-
-      @$('.showSearch').css 'display',
-        if Chaplin.mediator.user then 'block' else 'none'
-
     show: ->
       $(@el).show()
 
-    close: ->
-      mediator.publish 'removeaddsong'
-      $(@el).hide();
-
     submitHandler: (e) ->
       e.preventDefault()
-
       @collection.song = $('input[type="text"]').val()
       @collection.fetch()
 

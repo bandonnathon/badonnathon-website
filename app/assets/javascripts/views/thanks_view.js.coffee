@@ -2,36 +2,21 @@ define [
   'handlebars'
   'chaplin'
   'views/base/view'
-  'text!templates/donation.hbs'
+  'text!templates/thanks.hbs'
 ], (Handlebars, Chaplin, View, template) ->
+  
   'use strict'
 
-  # Shortcut to the mediator
-  mediator = Chaplin.mediator
+  class ThanksView extends View
 
-  class DonationView extends View
+    className: 'thanks'
 
-    container: '.donation'
-
+    container: '#wrapper'
+    
     autoRender: true
 
-    initialize: (options) ->
-      super
-      #@fetchTotal()
-
-    fetchTotal: ->
-      # get total donations from virgin
-      $.getJSON "http://api.jo.je/virginmoneygiving/jsonp.php?d=280684&callback=?", (resp) ->
-        percent = parseInt resp['money_target'] * 0.01
-        raised = parseInt resp['money_total']
-        percentRaised = raised / percent
-        total = 100 - percentRaised
-
-        $(".donation-total span").text raised
-        $(".donation-meter span").css 'width', total+'%'
-
     getTemplateFunction: ->
-
+      
       template = @template
 
       if typeof template is 'string'

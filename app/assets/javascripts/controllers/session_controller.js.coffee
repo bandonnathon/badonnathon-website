@@ -118,6 +118,8 @@ define [
 
     # Handler for the global logout event
     logout: =>
+
+      console.log 'not logged in'
       @loginStatusDetermined = true
 
       @disposeUser()

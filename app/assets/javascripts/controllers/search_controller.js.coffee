@@ -7,6 +7,6 @@ define [
 
   class SearchController extends Chaplin.Controller
 
-    initialize: ->
+    index: ->
       @songs = new SearchResults() # a collection
       @view = new SearchView collection: @songs # a collection view

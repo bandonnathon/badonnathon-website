@@ -13,10 +13,6 @@ define [
     model: Song
 
     url: ->
-      return "http://ws.spotify.com/search/1/track.json?q=" + @song
+      return "/search.json?q=" + @song
 
-    parse: (resp) ->
-      models = []
-      resp = resp.tracks[0..9]
-      models.push( { 'name' : resp[i].name, 'artist' : resp[i].artists[0].name } ) for i in [0..resp.length-1]
-      return models
+    
