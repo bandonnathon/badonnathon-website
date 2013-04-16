@@ -61,7 +61,6 @@ h1, h2, h3 {
   margin: 0;
 }
 
-
 body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -89,9 +88,20 @@ body {
   height: 100%;
 }
 
+@-webkit-keyframes move {
+    0%   { background-position: 0 0; }
+    100% { background-position: 0 -3200px; }
+  }
+  @-moz-keyframes move {
+    0%   { background-position: 0 0; }
+    100% { background-position: 0 -3200px; }
+  }
+
 body {
-  background: #4fd9a9 url(/images/bg-gradient.png) no-repeat 0 0;
+  background: #4fd9a9 url(/images/bg-gradient-2.png) repeat 0 0;
   background-size: 100% 100%;
+  -webkit-animation: move 20s infinite;
+  -moz-animation: move 20s infinite;
   position: relative;
 }
 
