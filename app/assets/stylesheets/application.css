@@ -81,14 +81,6 @@ a {
   color: inherit;
 }
 
-
-
-
-html,
-body {
-  height: 100%;
-}
-
 body {
   background: #4fd9a9 url(/images/bg-gradient.png) no-repeat 0 0;
   background-size: 100% 100%;
@@ -97,29 +89,13 @@ body {
 
 
 /******/
-#wrapper {
-  width: 100%;
-  height: 100%;
-}
-
 .page {
   position: relative;
   z-index: 2;
-  height: 100%;
 }
 
 #page-one {
-  background-size: cover;
-  bottom: 10px;
-  left: 10px;
-  position: absolute;
-  right: 10px;
-  top: 10px;
   z-index: 1;
-}
-
-.home-page {
-  background: url(/images/bg-home.jpg) no-repeat 50% 0;
 }
 
 .playlist-page {
@@ -216,8 +192,6 @@ a.playlist:after {
 .welcome {
   margin: 0 auto 0;
   position: relative;
-  width: 50%;
-  top: 280px;
   font-family: "futura-pt";
   font-weight: 500;
   z-index: 3;
@@ -232,7 +206,7 @@ a.playlist:after {
   background: #4edaa9;
   color: #fff;
   display: inline-block;
-  font-size: 2.154em;
+  font-size: 1.5em;
   line-height: 1.5;
   padding: 0 .5em;
   text-transform: uppercase;
@@ -247,16 +221,12 @@ a.playlist:after {
 .welcome .strap {
   -webkit-transform: matrix(1, -0.175, 0, 1, 0, 0);
   transform: matrix(1, -0.175, 0, 1, 0, 0);
-  margin-top: -5em;
+  margin-top: -15px;
 }
 
 .donation {
   background: rgb(255,255,255);
   box-shadow: 3px 3px 0 0 rgb(252, 96, 157);
-  position: absolute;
-  left: 25px;
-  top: 25px;
-  width: 240px;
   z-index: 3;
 }
 
@@ -271,11 +241,6 @@ a.playlist:after {
 .donation .border,
 .player .border {
   background: #fc609d;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 3px;
-  top: 3px;
   z-index: 1;
 }
 
@@ -424,10 +389,6 @@ a.playlist:after {
   font-weight: 500;
   font-size: 1.1em;
   background: #fef200;
-  position: absolute;
-  right: 25px;
-  bottom: 25px;
-  width: 328px;
 }
 
 .player .inner {
@@ -459,11 +420,6 @@ a.playlist:after {
 
 .also {
   background: yellow;
-  width: 155px;
-  height: 155px;
-  position: absolute;
-  right: 30px;
-  top: 30px;
   border-radius: 100px;
   padding: 25px;
   padding-top: 37px;
@@ -664,5 +620,89 @@ p.playlistTitle {
   cursor: pointer;
 }
 
+#wrapper {
+  padding: 6px;
+}
 
+#page-one {
+  padding: 100px 12px 0;
+}
 
+.home-page {
+  background: url(/images/bg-home-mobi.jpg) no-repeat 50% 0;
+}
+
+@media screen and (min-width: 30.063em) {
+  html,
+  body {
+    height: 100%;
+  }
+
+  #wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+
+  .page {
+    height: 100%;
+  }  
+
+  #page-one {
+    bottom: 10px;
+    left: 10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 0;
+    background-size: cover;
+  }
+
+  .home-page {
+    background: url(/images/bg-home.jpg) no-repeat 50% 0;
+  }
+
+  .welcome {
+    top: 280px;
+    width: 50%;
+  }
+
+  .welcome .strap {
+    margin-top: -30px;
+  }
+
+  .welcome a {
+    font-size: 2.154em;
+  }
+
+  .donation {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    width: 240px;
+  }
+
+  .player {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    width: 328px;
+  }
+
+  .player .border,
+  .donation .border {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 3px;
+    top: 3px;
+  }
+
+  .also {
+  width: 155px;
+  height: 155px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  }
+}
