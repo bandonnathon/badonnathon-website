@@ -131,17 +131,19 @@ body {
 }
 
 .close {
+  background: url(/images/icon-close.png) no-repeat 0 0;
   position: absolute;
   top: 20px;
   right: 20px;
-  font-size: 10em;
-  font-weight: 100;
-  line-height: 0.8em;
-  color: rgb(252,96,157);
+  overflow: hidden;
+  text-indent: -9999em;
+  width: 72px;
+  height: 72px;
 }
 
+.close:focus,
 .close:hover {
-  color: rgb(252,96,157);
+  background-position: 0 100%;
 }
 
 .mainHeading {
@@ -236,9 +238,16 @@ a.playlist:after {
   text-transform: uppercase;
 }
 
+.welcome a:focus,
+.welcome a:hover {
+  background: #442a8d;
+  color: #fff;
+}
+
 .welcome .strap {
   -webkit-transform: matrix(1, -0.175, 0, 1, 0, 0);
   transform: matrix(1, -0.175, 0, 1, 0, 0);
+  margin-top: -5em;
 }
 
 .donation {
@@ -361,6 +370,11 @@ a.playlist:after {
   text-decoration: underline;
 }
 
+.donation .donation-charity:focus,
+.donation .donation-charity:hover {
+  color: #442a8d;
+}
+
 
 
 
@@ -433,6 +447,12 @@ a.playlist:after {
 .player .playlist {
   display: block;
   margin-bottom: .5em;
+  font-size: 1.1em;
+}
+
+.player .playlist:focus,
+.player .playlist:hover {
+  color: #442a8d;
 }
 
 /******/
