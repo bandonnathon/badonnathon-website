@@ -118,9 +118,9 @@ body {
 
 .close {
   background: url(/images/icon-close.png) no-repeat 0 0;
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  display: block;
+  float: right;
+  margin: 10px 10px 0 0;
   overflow: hidden;
   text-indent: -9999em;
   width: 72px;
@@ -154,7 +154,7 @@ a.playlist:after {
   font-family: "futura-pt";
   font-weight: 500;
   font-size: 1.1em;
-  margin: 0 auto 0;
+  margin: 0 12px 0;
   max-width: 780px;
   position: relative;
   top: 102px;
@@ -363,14 +363,14 @@ a.playlist:after {
 
 .playlistpose,
 .aboutpose {
-  background: url(/images/bg-playlist.jpg) no-repeat 50% 0;
-  background-size: cover;
+  background: url(/images/bg-playlist-mobi.jpg) no-repeat 50% 0;
   bottom: 10px;
   left: 10px;
   position: absolute;
   right: 10px;
   top: 10px;
   z-index: 1;
+  min-height: 480px;
 }
 
 .cta-donate {
@@ -530,6 +530,7 @@ p.playlistTitle {
   margin: 0;
   padding: 0 0 0 10px;
   text-transform: uppercase;
+  width: 80%;
 }
 
 .playlist ul {
@@ -567,14 +568,12 @@ p.playlistTitle {
 }
 
 .playlist ul .track-name {
-  float: left;
+  display: block;
   text-transform: uppercase;
-  width: 60%;
 }
 
 .playlist ul .track-artist,
 .playlist ul .track-from {
-  float: right;
   text-transform: inherit;
 }
 
@@ -638,6 +637,32 @@ p.playlistTitle {
   margin-bottom: 2em;
 }
 
+.cta-big {
+  color: #FC609D;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+.cta-big:focus,
+.cta-big:hover {
+  color: #442A8D;
+}
+
+.cta-big:after {
+  background: url(/images/icon-triangle.png) no-repeat 0 0;
+  content: '';
+  display: inline-block;
+  height: 18px;
+  margin: 0 0 0 4px;
+  width: 19px;
+}
+
+.cta-big:focus:after,
+.cta-big:hover:after {
+  background-position: 0 -18px;
+}
+
+
 @media screen and (min-width: 30.063em) {
   html,
   body {
@@ -672,6 +697,13 @@ p.playlistTitle {
 
   .about-page {
     background: url(/images/bg-about.jpg) no-repeat 50% 0;
+  }
+
+  .playlistpose,
+  .aboutpose {
+    background: url(/images/bg-playlist.jpg) no-repeat 50% 0;
+    background-size: cover;
+    min-height: inherit;
   }
 
   .welcome {
@@ -736,5 +768,31 @@ p.playlistTitle {
   #results {
     height: 320px;
     overflow-y: scroll;
+  }
+
+  .panel {
+    margin: 0 auto;
+  }
+
+  .close {
+    float: none;
+    margin: 0;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .playlist ul .track-name {
+    float: left;
+    width: 60%;
+  }
+
+  .playlist ul .track-artist,
+  .playlist ul .track-from {
+    float: right;
+  }
+
+  .playlist ul .track-name {
+    display: inline;
   }
 }
