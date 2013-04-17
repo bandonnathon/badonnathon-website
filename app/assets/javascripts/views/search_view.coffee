@@ -32,12 +32,11 @@ define [
 
     initialize: ->
       super
-
       @subscribeEvent 'addsong', @show
       @delegate 'focusin', "input[name='song']", @clear
       @delegate 'focusout', "input[name='song']", @populate
       @delegate 'click', ".search-spotify input[type='submit']", @submitHandler
-
+      
     show: ->
       $(@el).show()
 

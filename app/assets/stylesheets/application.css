@@ -334,6 +334,11 @@ a.playlist:after {
   display: block;
   background: url(/images/donation-meter-target-dark.gif);
   width: 0;
+  -webkit-transition: width 2s ease, height 2s ease;  
+  -moz-transition: width 2s ease, height 2s ease;  
+  -o-transition: width 2s ease, height 2s ease;  
+  -ms-transition: width 2s ease, height 2s ease;  
+  transition: width 2s ease, height 2s ease;
 }
 
 .donation .donation-charity {

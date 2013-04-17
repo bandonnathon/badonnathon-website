@@ -28,9 +28,6 @@ define [
         donorScreen : donor
       })
       mediator.publish 'addToPlaylist', @model
-
-      console.log @model
-
       mediator.publish '!router:route', '/thanks'
       
     # Save the template string in a prototype property.

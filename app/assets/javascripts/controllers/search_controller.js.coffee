@@ -2,7 +2,8 @@ define [
   'chaplin'
   'models/searchresults'
   'views/search_view'
-], (Chaplin, SearchResults, SearchView) ->
+  'controllers/session_controller'
+], (Chaplin, SearchResults, SearchView, SessionController) ->
   'use strict'
 
   class SearchController extends Chaplin.Controller

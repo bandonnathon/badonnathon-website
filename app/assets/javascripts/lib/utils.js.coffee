@@ -371,6 +371,7 @@ not found"
     # isn't logged in
     # and calls preventDefault if an event object is passed.
     ensureLogin: (context, func, loginContext, eventType = 'login', args...) ->
+
       utils.afterLogin context, func, eventType, args...
 
       unless mediator.user

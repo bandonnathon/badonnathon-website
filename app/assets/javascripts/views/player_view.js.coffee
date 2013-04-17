@@ -10,25 +10,17 @@ define [
   mediator = Chaplin.mediator
 
   class PlayerView extends View
-
-    className: 'player'
-
-    # Automatically append to the DOM on render
-    container: '#page-one'
-    # Automatically render after initialize
+    
     autoRender: true
 
     initialize: (options) ->
       super
-      @collection.bind 'reset', @showLatest
-
-      if !Chaplin.mediator.songs.length
-        Chaplin.mediator.songs.fetch()
+      mediator.songs.bind 'reset', @showLatest
 
     showLatest: (collection) ->
-      $('.latestSong').append('<iframe src="https://embed.spotify.com/?uri=<%= song.href %>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>')
-
-
+      @model =  collection.at(collection.length-1)
+      $('.latestSong').append('<iframe src="https://embed.spotify.com/?uri='+@model.get('href')+'" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>')
+      $('.latestDonor span').text(@model.get('donor'))
     # Save the template string in a prototype property.
     # This is overwritten with the compiled template function.
     # In the end you might want to used precompiled templates.
@@ -36,21 +28,6 @@ define [
     template = null
 
     getTemplateFunction: ->
-      # Template compilation
-      # --------------------
-
-      # This demo uses Handlebars templates to render views.
-      # The template is loaded with Require.JS and stored as string on
-      # the view prototype. On rendering, it is compiled on the
-      # client-side. The compiled template function replaces the string
-      # on the view prototype.
-      #
-      # In the end you might want to precompile the templates to JavaScript
-      # functions on the server-side and just load the JavaScript code.
-      # Several precompilers create a global JST hash which stores the
-      # template functions. You can get the function by the template name:
-      #
-      # templateFunc = JST[@templateName]
 
       template = @template
 

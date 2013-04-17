@@ -2,8 +2,10 @@ define [
   'handlebars'
   'chaplin'
   'views/base/view'
+  'views/login_view'
+  'views/player_view'
   'text!templates/home.hbs'
-], (Handlebars, Chaplin, View, template) ->
+], (Handlebars, Chaplin, View, LoginView, PlayerView, template) ->
   'use strict'
 
   class HomeView extends View
@@ -32,11 +34,10 @@ define [
     # Show/hide a login appeal if not logged in
     showHideLoginNote: ->
       $('.loginHere').css 'display',
-        if !!Chaplin.mediator.user then 'none' else 'block'
+        if Chaplin.mediator.user then 'none' else 'block'
 
       $('.nologinHere').css 'display',
-        if !!Chaplin.mediator.user then 'block' else 'none'
-
+        if Chaplin.mediator.user then 'block' else 'none'
 
     getTemplateFunction: ->
 

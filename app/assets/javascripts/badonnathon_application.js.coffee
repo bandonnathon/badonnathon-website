@@ -9,7 +9,8 @@ define [
   'controllers/thanks_controller'
   'models/songs'
   'controllers/home_controller'
-], (Chaplin, Layout, routes, SessionController, PlaylistController, SearchController, AboutController, ThanksController, SongsCollection, HomeController) ->
+  'lib/utils'
+], (Chaplin, Layout, routes, SessionController, PlaylistController, SearchController, AboutController, ThanksController, SongsCollection, HomeController, utils) ->
   'use strict'
 
   # The application object
@@ -53,12 +54,7 @@ define [
     # ------------------------------
     initControllers: ->
       new SessionController()
-      new ThanksController()
-      new HomeController()
-      new PlaylistController()
-      new SearchController()
-      new AboutController()
-
+      
     # Create additional mediator properties
     # -------------------------------------
     initMediator: ->
