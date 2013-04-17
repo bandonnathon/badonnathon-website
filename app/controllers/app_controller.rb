@@ -14,7 +14,7 @@ class AppController < ApplicationController
       j = open("http://ws.spotify.com/search/1/track.json?q=#{URI.encode(song)}").read
       data = JSON.parse(j);
 
-      data['tracks'].take(10).map do |track|
+      data['tracks'].take(75).map do |track|
         songs << {
           :name => track['name'],
           :track => track['album']['name'],
