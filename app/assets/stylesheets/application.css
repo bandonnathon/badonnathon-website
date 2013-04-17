@@ -113,7 +113,7 @@ body {
 }
 
 .about-page {
-  background: url(/images/bg-about.jpg) no-repeat 50% 0;
+  background: url(/images/bg-about-mobi.jpg) no-repeat 50% 0;
 }
 
 .close {
@@ -200,7 +200,7 @@ a.playlist:after {
 }
 
 .welcome {
-  margin: 0 auto 0;
+  margin: 0 auto 6em;
   position: relative;
   font-family: "futura-pt";
   font-weight: 500;
@@ -208,6 +208,7 @@ a.playlist:after {
 }
 
 .welcome > img {
+  float: left;
   height: auto;
   width: 100%;
 }
@@ -229,12 +230,14 @@ a.playlist:after {
 }
 
 .welcome .strap {
+  float: left;
   -webkit-transform: matrix(1, -0.175, 0, 1, 0, 0);
   transform: matrix(1, -0.175, 0, 1, 0, 0);
   margin-top: -15px;
 }
 
 .donation {
+  clear: left;
   background: rgb(255,255,255);
   box-shadow: 3px 3px 0 0 rgb(252, 96, 157);
   z-index: 3;
@@ -291,12 +294,6 @@ a.playlist:after {
 .player .playlist:focus:after,
 .player .playlist:hover:after {
   background-position: 0 -18px;
-}
-
-#playlist,
-#results {
-  height: 320px;
-  overflow-y: scroll;
 }
 
 .donation a,
@@ -429,10 +426,8 @@ a.playlist:after {
 /******/
 
 .also {
-  background: yellow;
-  border-radius: 100px;
-  padding: 25px;
-  padding-top: 37px;
+  background: #fef200;
+  padding: .5em 0;
   text-align: center;
   color: #4edaa9;
   text-transform: uppercase;
@@ -440,11 +435,6 @@ a.playlist:after {
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;
   box-shadow: 4px 4px 0 0 rgb(78, 218, 169);
-  transform:rotate(15deg);
-  -ms-transform:rotate(15deg); /* IE 9 */
-  -moz-transform:rotate(15deg); /* Firefox */
-  -webkit-transform:rotate(15deg); /* Safari and Chrome */
-  -o-transform:rotate(15deg); /* Opera */
   z-index: 3;
 }
 
@@ -535,12 +525,11 @@ p.playlistTitle {
   color: rgb(51,51,51);
   float: left;
   font-family: "futura-pt";
-  font-size: 2em;
+  font-size: 1.3em;
   line-height: 1.5;
   margin: 0;
   padding: 0 0 0 10px;
   text-transform: uppercase;
-  width: 680px;
 }
 
 .playlist ul {
@@ -631,7 +620,9 @@ p.playlistTitle {
 }
 
 #wrapper {
-  padding: 6px;
+  background: url(/images/bg-noise-mobi.png) repeat 0 0;
+  margin: 6px;
+  padding: 0 0 12px;
 }
 
 #page-one {
@@ -642,6 +633,11 @@ p.playlistTitle {
   background: url(/images/bg-home-mobi.jpg) no-repeat 50% 0;
 }
 
+.donation,
+.player {
+  margin-bottom: 2em;
+}
+
 @media screen and (min-width: 30.063em) {
   html,
   body {
@@ -649,8 +645,10 @@ p.playlistTitle {
   }
 
   #wrapper {
+    background: transparent;
     width: 100%;
     height: 100%;
+    margin: 0;
     padding: 0;
   }
 
@@ -672,13 +670,18 @@ p.playlistTitle {
     background: url(/images/bg-home.jpg) no-repeat 50% 0;
   }
 
+  .about-page {
+    background: url(/images/bg-about.jpg) no-repeat 50% 0;
+  }
+
   .welcome {
     top: 280px;
     width: 50%;
+    margin-bottom: 0;
   }
 
   .welcome .strap {
-    margin-top: -30px;
+    margin-top: -1em;
   }
 
   .welcome a {
@@ -709,10 +712,29 @@ p.playlistTitle {
   }
 
   .also {
+    border-radius: 100px;
   width: 155px;
   height: 155px;
   position: absolute;
   right: 30px;
   top: 30px;
+  transform:rotate(15deg);
+  -ms-transform:rotate(15deg); /* IE 9 */
+  -moz-transform:rotate(15deg); /* Firefox */
+  -webkit-transform:rotate(15deg); /* Safari and Chrome */
+  -o-transform:rotate(15deg); /* Opera */
+   padding: 25px;
+  padding-top: 37px;
+  }
+
+  .playlist .search-spotify input[type="text"] {
+    font-size: 2em;
+    width: 680px;
+  }
+
+  #playlist,
+  #results {
+    height: 320px;
+    overflow-y: scroll;
   }
 }
