@@ -229,6 +229,11 @@ a.playlist:after {
   color: #fff;
 }
 
+.welcome a + img {
+  display: block;
+  margin: 10px 0;
+}
+
 .welcome .strap {
   float: left;
   -webkit-transform: matrix(1, -0.175, 0, 1, 0, 0);
