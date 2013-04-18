@@ -267,11 +267,10 @@ a.playlist:after {
   display: block;
   font-size: 1.846em;
   margin: 0 0 .5em;
-  padding: 0 0 .5em;
   text-transform: uppercase;
   text-decoration: none;
 }
-.donation .money4trax img {
+.donation .money4trax + img {
   display: block;
   margin: 10px 0;
 }
