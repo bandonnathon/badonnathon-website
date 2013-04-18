@@ -10,6 +10,8 @@ define [
 
   class HomeController extends Chaplin.Controller
     
+    initialize: ->
+
     title: 'Badonnathon'
       
     historyURL: (params) ->
@@ -17,6 +19,7 @@ define [
 
     home: (params) ->
       @model = new Home()
-      @view = new HomeView model: @model
+      @view = Chaplin.mediator.hview
+      @view.model = @model
       @view.subview 'pv', new PlayerView
-        container: @view.$('.player')
+          container: @view.$('.player')

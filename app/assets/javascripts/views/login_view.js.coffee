@@ -54,7 +54,6 @@ define [
       mediator.publish '!login', serviceProviderName
 
     serviceProviderLoaded: (serviceProviderName) ->
-      #console.debug 'LoginView#serviceProviderLoaded', serviceProviderName
       @$(".#{serviceProviderName}").removeClass('service-loading')
 
     serviceProviderFailed: (serviceProviderName) ->

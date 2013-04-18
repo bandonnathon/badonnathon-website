@@ -19,7 +19,7 @@ define [
 
     showLatest: (collection) ->
       @model =  collection.at(collection.length-1)
-      $('.latestSong').append('<iframe src="https://embed.spotify.com/?uri='+@model.get('href')+'" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>')
+      $('.latestSong').append('<iframe src="https://embed.spotify.com/?uri='+@model.get('href')+'" width="100%" height="80" frameborder="0" allowtransparency="true"></iframe>')
       $('.latestDonor span').text(@model.get('donor'))
     # Save the template string in a prototype property.
     # This is overwritten with the compiled template function.

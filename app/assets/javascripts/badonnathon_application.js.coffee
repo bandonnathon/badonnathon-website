@@ -7,10 +7,11 @@ define [
   'controllers/search_controller'
   'controllers/about_controller'
   'controllers/thanks_controller'
+  'views/home_view'
   'models/songs'
   'controllers/home_controller'
   'lib/utils'
-], (Chaplin, Layout, routes, SessionController, PlaylistController, SearchController, AboutController, ThanksController, SongsCollection, HomeController, utils) ->
+], (Chaplin, Layout, routes, SessionController, PlaylistController, SearchController, AboutController, ThanksController, HomeView, SongsCollection, HomeController, utils) ->
   'use strict'
 
   # The application object
@@ -60,6 +61,8 @@ define [
     initMediator: ->
       # Create a user property
       Chaplin.mediator.user = null
+
+      Chaplin.mediator.hview = new HomeView()
 
       # global collection
       Chaplin.mediator.songs = new SongsCollection()

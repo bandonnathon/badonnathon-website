@@ -454,16 +454,26 @@ a.playlist:after {
 }
 
 .fb-icon {
-  background: url(/images/fb-icon.png);
+  background: url(/images/fb-icon.gif) no-repeat 0 0;
 }
 
 .tw-icon {
-  background: url(/images/tw-icon.png);
+  background: url(/images/tw-icon.gif) no-repeat 0 0;
 }
 
 .sp-icon {
-  background: url(/images/sp-icon.png);
+  background: url(/images/sp-icon.gif) no-repeat 0 0;
 }
+
+.fb-icon:hover,
+.fb-icon:focus,
+.tw-icon:hover,
+.tw-icon:focus,
+.sp-icon:hover,
+.sp-icon:focus {
+  background-position: 0 100%;
+}
+
 /*******/
 
 
@@ -621,6 +631,11 @@ p.playlistTitle {
 
 .loginHere {
   cursor: pointer;
+}
+
+.loginHere,
+.nologinHere {
+  display: none;
 }
 
 #wrapper {
@@ -800,4 +815,8 @@ p.playlistTitle {
   .playlist ul .track-name {
     display: inline;
   }
+
+  .service-loading:after {
+    content: ' (Loading…)';
+   }
 }

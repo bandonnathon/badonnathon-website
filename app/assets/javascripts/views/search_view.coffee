@@ -1,8 +1,9 @@
 define [
   'chaplin'
   'views/base/collection_view'
+  'models/song'
   'views/compact_search_result_view'
-], (Chaplin, CollectionView, CompactSearchResultView) ->
+], (Chaplin, CollectionView, Song, CompactSearchResultView) ->
   'use strict'
 
   # Shortcut to the mediator
@@ -36,7 +37,11 @@ define [
       @delegate 'focusin', "input[name='song']", @clear
       @delegate 'focusout', "input[name='song']", @populate
       @delegate 'click', ".search-spotify input[type='submit']", @submitHandler
-      
+      @subscribeEvent 'addToPlaylist', @addToPlaylist
+
+    addToPlaylist: (model) ->
+      mediator.songs.create(new Song( model ) )
+
     show: ->
       $(@el).show()
 

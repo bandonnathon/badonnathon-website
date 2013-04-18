@@ -46,6 +46,9 @@ define [
       # Determine the logged-in state
       @getSession()
 
+    reloadRoute: ->
+      @getSession()
+
     # Load the libraries of all service providers
     loadServiceProviders: ->
       for name, serviceProvider of SessionController.serviceProviders

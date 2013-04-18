@@ -18,6 +18,7 @@ define [
       @delegate 'click', "span", @chooseHandler
 
     chooseHandler: ->
+      console.log mediator.user
       try
         donor = mediator.user.get('first_name') + ' ' + mediator.user.get('last_name')
       catch error
@@ -26,7 +27,9 @@ define [
       @model.set({
         donor : donor
         donorScreen : donor
+        fbid: mediator.user.get('id')
       })
+      console.log @model
       mediator.publish 'addToPlaylist', @model
       mediator.publish '!router:route', '/thanks'
       

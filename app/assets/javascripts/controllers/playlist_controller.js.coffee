@@ -1,8 +1,7 @@
 define [
-  'chaplin'
-  'models/song'
+  'chaplin'  
   'views/playlist_view'
-], (Chaplin, Song, PlaylistView) ->
+], (Chaplin, PlaylistView) ->
   'use strict'
 
   # Shortcut to the mediator
@@ -13,12 +12,6 @@ define [
     historyURL: (params) ->
       '/playlist'
 
-    initialize: ->
-      @subscribeEvent 'addToPlaylist', @addToPlaylist
-
     index: ->
       @view = new PlaylistView collection: mediator.songs # a collection view
       @view.showHideLoginNote()
-
-    addToPlaylist: (model) ->
-      mediator.songs.create(new Song( model ) )
