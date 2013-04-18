@@ -272,6 +272,10 @@ a.playlist:after {
   text-transform: uppercase;
   text-decoration: none;
 }
+.donation .money4trax a + img {
+  display: block;
+  margin: 6px 0;
+}
 
 .donation .money4trax:focus,
 .donation .money4trax:hover {
@@ -280,7 +284,7 @@ a.playlist:after {
 
 .cta-donate:after,
 .cta-give:after,
-.donation .money4trax:after,
+.donation .money4trax a:after,
 .player .playlist:after {
   background: url(/images/icon-triangle.png) no-repeat 0 0;
   content: '';
@@ -294,8 +298,8 @@ a.playlist:after {
 .cta-donate:hover:after,
 .cta-give:focus:after,
 .cta-give:hover:after,
-.donation .money4trax:focus:after,
-.donation .money4trax:hover:after,
+.donation .money4trax a:focus:after,
+.donation .money4trax a:hover:after,
 .player .playlist:focus:after,
 .player .playlist:hover:after {
   background-position: 0 -18px;
