@@ -9,7 +9,7 @@ class PlaylistController < ApplicationController
   end
 
   def add
-  	@user = Song.new(:name => params[:name], :artist => params[:artist], :donor => params[:donor], :donorScreen => params[:donorScreen])
+  	@user = Song.new(:name => params[:name], :artist => params[:artist], :donor => params[:donor], :donorScreen => params[:donorScreen], :href => params[:href], :fbid => params[:fbid])
   	if @user.save!
   		@msg = "saved"
   	else
