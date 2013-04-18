@@ -263,7 +263,6 @@ a.playlist:after {
 }
 
 .donation .money4trax {
-  border-bottom: 3px solid #fecfe1;
   color: #fc609d;
   display: block;
   font-size: 1.846em;
@@ -272,9 +271,9 @@ a.playlist:after {
   text-transform: uppercase;
   text-decoration: none;
 }
-.donation .money4trax a + img {
+.donation .money4trax img {
   display: block;
-  margin: 6px 0;
+  margin: 10px 0;
 }
 
 .donation .money4trax:focus,
@@ -322,6 +321,8 @@ a.playlist:after {
 }
 
 .donation .donation-intro {
+  border-top: 3px solid #fecfe1;
+  padding-top: 10px;
   font-size: 1.385em;
   text-transform: uppercase;
 }
