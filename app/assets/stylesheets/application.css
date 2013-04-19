@@ -229,6 +229,11 @@ a.playlist:after {
   color: #fff;
 }
 
+.welcome a + img {
+  display: block;
+  margin: 10px 0;
+}
+
 .welcome .strap {
   float: left;
   -webkit-transform: matrix(1, -0.175, 0, 1, 0, 0);
@@ -258,14 +263,16 @@ a.playlist:after {
 }
 
 .donation .money4trax {
-  border-bottom: 3px solid #fecfe1;
   color: #fc609d;
   display: block;
   font-size: 1.846em;
   margin: 0 0 .5em;
-  padding: 0 0 .5em;
   text-transform: uppercase;
   text-decoration: none;
+}
+.donation .money4trax + img {
+  display: block;
+  margin: 10px 0;
 }
 
 .donation .money4trax:focus,
@@ -313,6 +320,8 @@ a.playlist:after {
 }
 
 .donation .donation-intro {
+  border-top: 3px solid #fecfe1;
+  padding-top: 10px;
   font-size: 1.385em;
   text-transform: uppercase;
 }
