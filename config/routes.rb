@@ -3,6 +3,7 @@ ChaplinExample::Application.routes.draw do
   root :to => 'app#show'
   match 'addsong' => 'app#show'
   match 'thanks' => 'app#show'
+  match 'listen' => 'app#show'
   match 'marathonmix' => 'app#show'
   match 'about' => 'app#show'
   

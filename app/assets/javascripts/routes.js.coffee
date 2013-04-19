@@ -10,4 +10,5 @@ define ->
     match 'addsong', 'search#index'
     match 'about', 'about#index'
     match 'thanks', 'thanks#index'
+    match 'listen', 'listen#index'
 

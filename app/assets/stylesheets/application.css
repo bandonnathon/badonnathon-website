@@ -816,7 +816,7 @@ p.playlistTitle {
     display: inline;
   }
 
-  .service-loading:after {
-    content: ' (Loading…)';
+   .listen {
+    width: 400px;
    }
 }

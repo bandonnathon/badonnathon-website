@@ -7,6 +7,9 @@ define [
 
   class AboutController extends Chaplin.Controller
 
+    initialize: ->
+      title: 'About'
+
     historyURL: (params) ->
       '/'
 

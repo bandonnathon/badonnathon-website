@@ -5,7 +5,7 @@ define [
   'use strict'
 
   class ThanksController extends Chaplin.Controller
-
+  	
     historyURL: (params) ->
       '/thanks'
 

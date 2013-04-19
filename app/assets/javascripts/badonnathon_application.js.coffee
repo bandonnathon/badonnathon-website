@@ -7,11 +7,12 @@ define [
   'controllers/search_controller'
   'controllers/about_controller'
   'controllers/thanks_controller'
+  'controllers/listen_controller'
   'views/home_view'
   'models/songs'
   'controllers/home_controller'
   'lib/utils'
-], (Chaplin, Layout, routes, SessionController, PlaylistController, SearchController, AboutController, ThanksController, HomeView, SongsCollection, HomeController, utils) ->
+], (Chaplin, Layout, routes, SessionController, PlaylistController, SearchController, AboutController, ThanksController, ListenController, HomeView, SongsCollection, HomeController, utils) ->
   'use strict'
 
   # The application object
@@ -20,7 +21,7 @@ define [
 
     # Set your application name here so the document title is set to
     # “Controller title – Site title” (see Layout#adjustTitle)
-    title: 'Chaplin Example Application'
+    title: 'Badonnathon'
 
     initialize: ->
       super

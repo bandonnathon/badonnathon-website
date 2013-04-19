@@ -9,8 +9,6 @@ define [
   'use strict'
 
   class HomeController extends Chaplin.Controller
-    
-    initialize: ->
 
     title: 'Badonnathon'
       
