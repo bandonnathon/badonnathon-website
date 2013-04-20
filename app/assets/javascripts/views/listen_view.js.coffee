@@ -20,11 +20,8 @@ define [
       Chaplin.mediator.songs.bind 'reset', @show
 
     show: (collection) ->
-      models = collection.models.map (x) -> x.get('href').split(':')[2]
-    
-      models = models.join()
-    
-      $('#listen').append('<iframe src="https://embed.spotify.com/?uri=spotify:trackset:BADONNATHON:'+models+'" width="350px" height="430" frameborder="0" allowtransparency="true"></iframe>')
+      
+      $('#listen').append('<iframe src="https://embed.spotify.com/?uri=spotify:user:paul.carvill:playlist:5cO2C8jfCykbXzb84Eheea" width="350" height="430" frameborder="0" allowtransparency="true"></iframe>')
 
     getTemplateFunction: ->
       template = @template
