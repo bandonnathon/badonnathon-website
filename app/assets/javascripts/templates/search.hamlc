@@ -7,20 +7,11 @@
         <div class="showSearch">
           <h1>Pick your track</h1>
             
-          <form action="/search" class="search-spotify clearfix">
-            <input type="text" name="song" value="Type a song's name or artist here" />
-            <input type="submit" />
-          </form>
-
-          <p class="loading">Loading…</p>
-          <p class="fallback">...</p>
-
-          <ul id="results"></ul>
+          <p>Sorry, you're too late! The Marathon Mix has now been downloaded onto Badonna's iPod.</p>
+          <p>But you can still</p>
+          <p><a href="https://uk.virginmoneygiving.com/fundraiser-web/donate/makeDonationForFundraiserDisplay.action?fundraiserActivityId=280684" class="cta-donate">hand over your cash</a></p>
+          <p>to support the Terrence Higgins Trust. Pleeeeease.</p>
         </div>
-
-        <button class="cta-give" style="display:none">
-          Give your cash to add your pumpin' track
-        </button>
 
       </div>
     </div>
