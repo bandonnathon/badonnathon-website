@@ -26,7 +26,10 @@ define [
       $.getJSON "http://api.jo.je/virginmoneygiving/jsonp.php?d=280684&callback=?", (resp) ->
         percent = parseInt resp['money_target'] * 0.01
         raised = parseInt resp['money_total']
+        giftaid = parseInt resp['money_gift_aid']
+        raised += giftaid
         percentRaised = raised / percent
+        
 
         $(".donation-total span").text raised
         $(".donation-meter span").css 'width', percentRaised+'%'
