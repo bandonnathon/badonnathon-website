@@ -8,6 +8,10 @@ class AppController < ApplicationController
     render :layout => 'application'
   end
 
+  def map
+    render :layout => 'map'
+  end
+
   def search
       song = params[:q]
       songs = []
