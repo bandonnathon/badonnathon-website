@@ -11,4 +11,5 @@ define ->
     match 'about', 'about#index'
     match 'thanks', 'thanks#index'
     match 'listen', 'listen#index'
+    match 'map', 'map#index'
 

@@ -828,4 +828,27 @@ p.playlistTitle {
    .listen {
     width: 400px;
    }
+
+   #map-canvas, #map_canvas {
+      height: 100%;
+}
+
+#map-canvas, #map_canvas {
+      height: 100%;
+    }
+
+    #panel {
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      margin-left: -180px;
+      z-index: 5;
+      background-color: #fff;
+      padding: 5px;
+      border: 1px solid #999;
+    }
+
+    .plist {
+      height: 100%;
+    }
 }

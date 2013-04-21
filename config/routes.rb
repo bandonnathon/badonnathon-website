@@ -6,6 +6,7 @@ ChaplinExample::Application.routes.draw do
   match 'listen' => 'app#show'
   match 'marathonmix' => 'app#show'
   match 'about' => 'app#show'
+  match 'map' => 'app#show'
   
   match 'playlist' => 'playlist#index', :via => :get
   match 'playlist' => 'playlist#add', :via => :post
